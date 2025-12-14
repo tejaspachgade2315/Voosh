@@ -1,0 +1,25 @@
+# Render.com Configuration for Backend
+# https://render.com/docs/yaml-spec
+
+services:
+  - type: web
+    name: rag-news-chatbot-backend
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install && npm run ingest
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: JINA_API_KEY
+        sync: false
+      - key: REDIS_URL
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
+      - key: SESSION_TTL
+        value: 86400

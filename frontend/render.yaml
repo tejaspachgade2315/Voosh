@@ -1,0 +1,22 @@
+# Render.com Configuration for Frontend
+# https://render.com/docs/yaml-spec
+
+services:
+  - type: static
+    name: rag-news-chatbot-frontend
+    env: static
+    region: oregon
+    plan: free
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./build
+    envVars:
+      - key: REACT_APP_API_URL
+        sync: false
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
