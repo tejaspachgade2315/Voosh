@@ -321,14 +321,3 @@ cacheTTL: {
 | Frontend UX & Demo | 5% | Responsive UI with SCSS |
 | Hosting | 10% | Render.com deployment configs |
 
-## 📝 License
-
-MIT License
-
-## 👤 Author
-
-Your Name - [GitHub](https://github.com/yourusername)
-
----
-
-Built with ❤️ for Voosh Full Stack Developer Assignment
